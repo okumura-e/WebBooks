@@ -1,0 +1,51 @@
+@charset "UFT-8";
+
+nav > a{
+    text-decoration: none;
+    font-size: 20px;
+    border: solid;
+    border-radius: 3px;
+    padding: 7px 55px;
+    font-weight: bolder;
+}
+nav > a:hover{
+    background-color: #6558f5;
+}
+nav{
+    margin-bottom: 7px;
+}
+
+#geral{
+    margin: 0% 16% ;
+    border: 0.7px solid #6558f5;
+}
+#library{
+    background-color: #6558f5;
+}
+#pag{
+    background-color: #c3cfd9;
+}
+#search{
+    margin: 1% 2% 2% 70%;
+    border-radius: 7px;
+    width: 130px;
+    height: 35px;
+}
+#button{
+    font-family: Bahnschrift;
+    font-size: 15px;
+    background-color: #4b5c6b;
+    color: blanchedalmond;
+    width: 85px;
+    height: 35px;
+    margin: 10px;
+    border-radius: 7px;
+}
+#book{
+    border: 0.5px solid black;
+    margin: auto;
+    background-color: white;
+}
+#pulo{
+    margin: 3px 5px;
+}

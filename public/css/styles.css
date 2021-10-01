@@ -1,0 +1,33 @@
+body{
+    background-image: url(/img/telainicial.gif);
+    background-size: cover;
+}
+
+div{
+    text-align: center;
+    margin: 41px;
+}
+h1{
+    text-align: center;
+    font-family: Monotype Corsiva;
+    font-size: 50px;
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+#butt{
+    font-family: Bahnschrift;
+    font-size: 15px;
+    background-color: #6558f5;
+    color: blanchedalmond;
+    width: 170px;
+    height: 50px;
+    margin: 40px;
+    border-radius: 10px;
+}
+#butt:hover{
+    background: linear-gradient(#6761a7, #551d75);
+}
+#aa{
+    width: 10%;
+    height: 10%;
+}
