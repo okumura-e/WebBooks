@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('css/biblioteca.css') }}" rel="stylesheet">
-    <title>Biblioteca</title>
+    <link href="{{asset('css/recomendacao.css')}}" rel="stylesheet">
+    <title>Recomendações</title>
 </head>
-
 <body>
     <div id="geral">
-
         <div>
             <header>
                 <nav>
@@ -22,13 +19,12 @@
                 </nav>
             </header>
         </div>
-
         <div id="pag">
             <input id="button" type="button" value="📚 Filtro">
             <input id="search" type="search" placeholder="🔍 Pesquisar">
             <div id="book">
                 <br>
-                <img id="pulo" src="/img/capa_livro.png" alt="">
+                <img id="pulo" src="img/capa_livro.png" alt="">
                 <br>
             </div>
         </div>

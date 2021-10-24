@@ -15,7 +15,7 @@ nav{
     margin-top: 10px;
     margin-bottom: 7px;
 }
-#library{
+#perfil{
     background-color: #6558f5;
 }
 #geral{
@@ -29,28 +29,19 @@ nav{
     height: 85%;
     margin: auto;
 }
-#search{
-    margin: 1% 2% 2% 68%;
-    border-radius: 7px;
-    width: 130px;
-    height: 35px;
-}
-#button{
-    font-family: Bahnschrift;
-    font-size: 15px;
-    background-color: #4b5c6b;
-    color: blanchedalmond;
-    width: 85px;
-    height: 35px;
-    margin: 10px;
-    border-radius: 7px;
-}
 #book{
     border: 0.5px solid black;
     margin: auto;
     background-color: white;
 }
 #pulo{
-    margin-left: 8px;
-    margin-bottom: 8px;
+    margin-left: 43%;
+    font-family: Arial Narrow;
+}
+#nome{
+    margin-left: 38%;
+    font-family: Comic Sans Ms;
+}
+#list{
+    margin-left: 5%;
 }

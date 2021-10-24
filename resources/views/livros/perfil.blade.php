@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('css/biblioteca.css') }}" rel="stylesheet">
-    <title>Biblioteca</title>
+    <link href="{{asset('css/perfil.css')}}" rel="stylesheet">
+    <title>Meu Perfil</title>
 </head>
-
 <body>
     <div id="geral">
 
@@ -24,12 +22,23 @@
         </div>
 
         <div id="pag">
-            <input id="button" type="button" value="📚 Filtro">
-            <input id="search" type="search" placeholder="🔍 Pesquisar">
+            <br>
+            <img id="pulo" src="img/user.png" alt="">
+            <h1 id="nome">{{$nome}} {{$snome}}</h1>
+            
             <div id="book">
+                <h3 id="pulo">Continue lendo</h3>
                 <br>
-                <img id="pulo" src="/img/capa_livro.png" alt="">
+                    <div id="list">
+                        <h4>titulo</h4>
+                        <img src="img/capa_livro.png" alt="">
+                    </div>
                 <br>
+
+                <div id="obras">
+                    <h3 id="pulo">Minhas obras</h3>
+                    <img src="img/capa_livro.png" alt="">
+                </div>
             </div>
         </div>
     </div>

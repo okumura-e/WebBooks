@@ -23,7 +23,7 @@ class IndexLoginController extends Controller
         if(Auth::attempt($dados)){
             return view('livros.biblioteca');
         }else{
-            return redirect()->route('livros.login')->with('danger', 'E-mail ou senha incorretos');
+            return redirect()->route('livros.login');
         }
     }
 }

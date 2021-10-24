@@ -5,6 +5,9 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\IndexLoginController;
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\BibliotecaController;
+use App\Http\Controllers\RecomendacaoController;
+use App\Http\Controllers\DestaqueController;
+use App\Http\Controllers\PerfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +28,6 @@ Route::get('/cadastro', [CadastroController::class, 'cadastro'])->name('livros.c
 Route::post('/cadastro/attempt', [CadastroController::class, 'registro'])->name('livros.registro');
 
 Route::get('/biblioteca',[BibliotecaController::class, 'biblioteca'])->name('livros.biblioteca');
-
+Route::get('/recomendacao',[RecomendacaoController::class, 'recomendacao'])->name('livros.recomendacao');
+Route::get('/destaque',[DestaqueController::class, 'destaque'])->name('livros.destaque');
+Route::get('/perfil', [PerfilController::class, 'perfil'])->name('livros.perfil');
