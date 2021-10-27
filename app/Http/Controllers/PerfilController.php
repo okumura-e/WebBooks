@@ -18,6 +18,28 @@ class PerfilController extends Controller
         else{
             return view('livros.login');
         }
-        
     }
+    public function newwork()
+    {
+        if(Auth::check()=== true){
+            return view('livros.newwork');
+        }else{
+            return view('livros.login');
+        }
+    }
+
+    public function obra(Request $request)
+    {
+        $request->validate([
+            'capa'=>'required',
+            'titulo'=>'required|min:5|',
+            'descricao'=>'required|min:50|',
+            'obra'=>'required|min:500|',
+            'categoria1'=>'required',
+            'categoria2',
+            'categoria3',
+        ]);
+    }
+
 }
+

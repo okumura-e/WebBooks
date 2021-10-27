@@ -25,5 +25,7 @@ class CadastroController extends Controller
         ]);
         $request['password']=Hash::make($request['password']);
         User::create($request->all());
+
+        return view('livros.login');
     }
 }

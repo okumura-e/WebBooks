@@ -45,3 +45,16 @@ nav{
 #list{
     margin-left: 5%;
 }
+#butt{
+    font-family: Bahnschrift;
+    font-size: 15px;
+    background-color: #6558f5;
+    color: blanchedalmond;
+    width: 85px;
+    height: 35px;
+    margin: 10px;
+    border-radius: 7px;
+}
+#butt:hover{
+    background: linear-gradient(#6761a7, #551d75);
+}

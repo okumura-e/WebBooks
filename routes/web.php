@@ -31,3 +31,6 @@ Route::get('/biblioteca',[BibliotecaController::class, 'biblioteca'])->name('liv
 Route::get('/recomendacao',[RecomendacaoController::class, 'recomendacao'])->name('livros.recomendacao');
 Route::get('/destaque',[DestaqueController::class, 'destaque'])->name('livros.destaque');
 Route::get('/perfil', [PerfilController::class, 'perfil'])->name('livros.perfil');
+Route::get('/newwork',[PerfilController::class, 'newwork'])->name('livros.newwork');
+
+Route::fallback([IndexController::class, 'index'])->name('livros.index');

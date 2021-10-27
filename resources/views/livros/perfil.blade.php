@@ -16,7 +16,7 @@
                     <a id="library" href="/biblioteca">Biblioteca</a>
                     <a id="recomendacao"href="/recomendacao">Recomendações</a>
                     <a id="destaque" href="/destaque">Destaques</a>
-                    <a id="perfil" href="/perfil">Meu Perfil</a>
+                    <a id="perfil" href="/perfil">Perfil</a>
                 </nav>
             </header>
         </div>
@@ -35,11 +35,13 @@
                     </div>
                 <br>
 
-                <div id="obras">
+                <div id="list">
                     <h3 id="pulo">Minhas obras</h3>
                     <img src="img/capa_livro.png" alt="">
                 </div>
             </div>
+            <br>
+            <a href="/newwork" ><button id = "butt" type = "submit" name = "newWork"> Nova obra </button></a>
         </div>
     </div>
 </body>
