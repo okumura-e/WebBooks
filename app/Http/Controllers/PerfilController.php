@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
-use \Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Models\Book;
+use App\Traits\UploadAble;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\UploadedFile;
+use \Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 class PerfilController extends Controller
 {
     public function perfil()
@@ -31,15 +35,33 @@ class PerfilController extends Controller
     public function obra(Request $request)
     {
         $request->validate([
-            'capa'=>'required',
-            'titulo'=>'required|min:5|',
-            'descricao'=>'required|min:50|',
-            'obra'=>'required|min:500|',
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif',
+            'tittle'=>'required|min:5|',
+            'descricao'=>'required',
+            'obra'=>'required',
             'categoria1'=>'required',
             'categoria2',
             'categoria3',
         ]);
+        if ($request->hasFile('image') && $request->file('image')->isValid())
+        {
+            $requestImg = $request->image;
+            $extension = $requestImg->extension();
+            $imageName = $requestImg->getClientOriginalName() . "." . $extension;
+            $requestImg->move(public_path('img/events'), $imageName);
+            $request->image = $imageName;
+        }
+        $livro = new Book();
+        $user = auth()->user()->id;
+        $livro->user_id = $user;
+        $livro->image = $imageName;
+        $livro->tittle = $request->tittle;
+        $livro->descricao = $request->descricao;
+        $livro->obra = $request->obra;
+        $livro->categoria1 = $request->categoria1;
+        $livro->categoria2 = $request->categoria2;
+        $livro->categoria3 = $request->categoria3;
+        $livro->save();
+        return redirect()->route('livros.perfil');
     }
-
 }
-

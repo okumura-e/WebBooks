@@ -30,7 +30,9 @@ Route::post('/cadastro/attempt', [CadastroController::class, 'registro'])->name(
 Route::get('/biblioteca',[BibliotecaController::class, 'biblioteca'])->name('livros.biblioteca');
 Route::get('/recomendacao',[RecomendacaoController::class, 'recomendacao'])->name('livros.recomendacao');
 Route::get('/destaque',[DestaqueController::class, 'destaque'])->name('livros.destaque');
+
 Route::get('/perfil', [PerfilController::class, 'perfil'])->name('livros.perfil');
 Route::get('/newwork',[PerfilController::class, 'newwork'])->name('livros.newwork');
+Route::post('/newpost',[PerfilController::class, 'obra'])->name('livros.post');
 
 Route::fallback([IndexController::class, 'index'])->name('livros.index');

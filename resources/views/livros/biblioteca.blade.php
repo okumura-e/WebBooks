@@ -24,13 +24,33 @@
         </div>
 
         <div id="pag">
-            <input id="button" type="button" value="📚 Filtro">
+            <input class="button" type="button" value="📚 Filtro">
             <input id="search" type="search" placeholder="🔍 Pesquisar">
+            
+            
+            @foreach ($books as $book)
             <div id="book">
-                <br>
-                <img id="pulo" src="/img/capa_livro.png" alt="">
-                <br>
+                <div class="content">
+                    <div class="card">
+                        <div class="topCard">
+                            <h2 class="title">{{$book->tittle}}</h2>
+                        </div>
+                        <div class="mediaCard">
+                            <picture class="image">
+                                <img src="/img/events/{{$book->image}}" alt="capa_livro">
+                            </picture>
+                            <div class="bottomCard">
+                                <p class="bottomText">{{$book->descricao}}</p>
+                                <div>
+                                    <button class="button">Curtir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
             </div>
+            @endforeach
+
         </div>
     </div>
 </body>
