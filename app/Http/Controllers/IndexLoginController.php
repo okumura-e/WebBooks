@@ -21,7 +21,7 @@ class IndexLoginController extends Controller
         $dados = $request->only('email','password');
         
         if(Auth::attempt($dados)){
-            return view('livros.biblioteca');
+            return redirect()->route('livros.biblioteca');
         }else{
             return redirect()->route('livros.login');
         }

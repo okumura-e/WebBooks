@@ -1,4 +1,4 @@
-@charset "UFT-8";
+@charset "UTF-8";
 *
 {
     margin: 0;
@@ -117,4 +117,26 @@ body{
 .cardButton:hover{
     background-color: #7268df;
     transition: .5s;
+}
+picture{
+    width:100%;
+}
+img{
+    width: 450px;
+    height: 260px;
+    margin-top: 50px;
+    margin-left: 29%;
+    border-radius: 10%
+}
+.titulo{
+    margin-left: 50%;
+}
+.descricao{
+    margin-left: 50%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.obra{
+    margin-left: 50%;
+    margin-bottom: 30px;
 }

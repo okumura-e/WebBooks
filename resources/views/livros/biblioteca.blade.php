@@ -18,7 +18,7 @@
                     <a id="library" href="/biblioteca">Biblioteca</a>
                     <a id="recomendacao"href="/recomendacao">Recomendações</a>
                     <a id="destaque" href="/destaque">Destaques</a>
-                    <a id="perfil" href="/perfil">Meu Perfil</a>
+                    <a id="perfil" href="{{route('livros.perfil')}}">Meu Perfil</a>
                 </nav>
             </header>
         </div>
@@ -27,27 +27,18 @@
             <input class="button" type="button" value="📚 Filtro">
             <input id="search" type="search" placeholder="🔍 Pesquisar">
             
-            
             @foreach ($books as $book)
             <div id="book">
-                <div class="content">
-                    <div class="card">
-                        <div class="topCard">
-                            <h2 class="title">{{$book->tittle}}</h2>
-                        </div>
-                        <div class="mediaCard">
-                            <picture class="image">
-                                <img src="/img/events/{{$book->image}}" alt="capa_livro">
-                            </picture>
-                            <div class="bottomCard">
-                                <p class="bottomText">{{$book->descricao}}</p>
-                                <div>
-                                    <button class="button">Curtir</button>
-                                </div>
-                            </div>
-                        </div>
+                <div class="card">
+                    <h2 class="title">{{$book->tittle}}</h2>
+                    <picture class="image">
+                        <img src="/img/events/{{$book->image}}" alt="capa_livro">
+                    </picture>
+                    <div class="textBox">
+                        <p class="bottomText">{{$book->descricao}}</p>
                     </div>
-                </div>    
+                    <a href="/leitura/{{$book->id}}"><button class="cardButton">Começar</button></a>
+                </div>  
             </div>
             @endforeach
 

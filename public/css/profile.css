@@ -50,11 +50,21 @@ nav{
     font-size: 15px;
     background-color: #6558f5;
     color: blanchedalmond;
-    width: 85px;
+    width: 130px;
     height: 35px;
-    margin: 10px;
+    margin-left: 43%;
     border-radius: 7px;
 }
 #butt:hover{
     background: linear-gradient(#6761a7, #551d75);
+}
+input{
+    width: 45%;
+    height: 25px;
+    margin-left: 30%;
+    font-family: Bahnschrift;
+    font-weight: bolder;
+    font-size: 15px;
+    display:flex;
+    justify-content:center;
 }

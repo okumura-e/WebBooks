@@ -16,12 +16,21 @@ class BibliotecaController extends Controller
     {
         if(Auth::check() === true){
             $user = auth()->user();
-            $books = $user->books;
-                return view('livros.biblioteca', compact('books'));
-        }
-        else{
+            $books = Book::all();
+            return view('livros.biblioteca', compact('books'));
+        }else{
             return view('livros.login');
         }
     }
-}
 
+    public function leitura($id)
+    {
+        if(Auth::check() === true)
+        {
+            $book = Book::where('id', $id)->first();
+            return view('livros.leitura', compact('book'));
+        }else{
+            return view('login.biblioteca');
+        }
+    }
+}

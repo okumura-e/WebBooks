@@ -28,11 +28,18 @@ Route::get('/cadastro', [CadastroController::class, 'cadastro'])->name('livros.c
 Route::post('/cadastro/attempt', [CadastroController::class, 'registro'])->name('livros.registro');
 
 Route::get('/biblioteca',[BibliotecaController::class, 'biblioteca'])->name('livros.biblioteca');
+Route::get('/leitura/{id}', [BibliotecaController::class, 'leitura'])->name('livros.leitura');
 Route::get('/recomendacao',[RecomendacaoController::class, 'recomendacao'])->name('livros.recomendacao');
 Route::get('/destaque',[DestaqueController::class, 'destaque'])->name('livros.destaque');
 
 Route::get('/perfil', [PerfilController::class, 'perfil'])->name('livros.perfil');
 Route::get('/newwork',[PerfilController::class, 'newwork'])->name('livros.newwork');
 Route::post('/newpost',[PerfilController::class, 'obra'])->name('livros.post');
+
+
+Route::get('/{id}/profile',[PerfilController::class, 'edit'])->where('id', '[0-9]+')->name('livros.edit');
+Route::put('/{id}/newprofile', [PerfilController::class,'update'])->where('id', '[0-9]+')->name('livros.update');
+
+Route::delete('/{id}', [PerfilController::class, 'destroy'])->where('id', '[0-9]+')->name('livros.destroy');
 
 Route::fallback([IndexController::class, 'index'])->name('livros.index');

@@ -23,6 +23,7 @@ class PerfilController extends Controller
             return view('livros.login');
         }
     }
+
     public function newwork()
     {
         if(Auth::check()=== true){
@@ -64,4 +65,41 @@ class PerfilController extends Controller
         $livro->save();
         return redirect()->route('livros.perfil');
     }
+
+
+    public function edit($id)
+    {
+        $user = User::where('id', $id)->first();
+        if(!empty($user))
+        {
+            return view('livros.edit', ['nome' => $user->name, 'snome' => $user->sname]);
+        }else{
+            return view('livros.perfil');
+        }
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name'=>'required',
+            'sname'=>'required'
+        ]);
+
+        $user = auth()->user();
+        $nova = [
+            'name'=> $request->name,
+            'sname'=> $request->sname,
+        ];
+        User::where('id', $id)->update($nova);
+        return redirect()->route('livros.perfil');
+    }
+
+    public function destroy($id)
+    {
+        User::where('id', $id)->delete();
+        redirect()->route('livros.index');
+    }
+
+
 }

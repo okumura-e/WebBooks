@@ -16,21 +16,20 @@
                     <a id="library" href="/biblioteca">Biblioteca</a>
                     <a id="recomendacao"href="/recomendacao">Recomendações</a>
                     <a id="destaque" href="/destaque">Destaques</a>
-                    <a id="perfil" href="/perfil">Perfil</a>
+                    <a id="perfil" href="{{route('livros.perfil')}}">Meu Perfil</a>
                 </nav>
             </header>
         </div>
 
         <div id="pag">
             <br>
-            <img id="pulo" src="img/user.png" alt="">
+            <a href="{{route('livros.edit',['id' => Auth::user()->id])}}"><img id="pulo" src="img/user.png" alt=""></a>
             <h1 id="nome">{{$nome}} {{$snome}}</h1>
             
             <div id="book">
                 <h3 id="pulo">Continue lendo</h3>
                 <br>
                     <div id="list">
-                        <h4>titulo</h4>
                         <img src="img/capa_livro.png" alt="">
                     </div>
                 <br>
