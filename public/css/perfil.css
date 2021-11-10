@@ -58,3 +58,11 @@ nav{
 #butt:hover{
     background: linear-gradient(#6761a7, #551d75);
 }
+img{
+    width:150px;
+    height:90;
+    margin-left: 20px;
+}
+p{
+    margin-left:20px;
+}

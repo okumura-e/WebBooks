@@ -17,7 +17,9 @@ class PerfilController extends Controller
         if(Auth::check() === true){
             $nome = Auth::user()->name;
             $snome = Auth::user()->sname;
-            return view('livros.perfil', ['nome' => $nome, 'snome'=> $snome]);
+            $user = auth()->user();
+            $livros = $user->books;
+            return view('livros.perfil', ['nome' => $nome, 'snome'=> $snome], compact('livros'));
         }
         else{
             return view('livros.login');
@@ -101,5 +103,44 @@ class PerfilController extends Controller
         redirect()->route('livros.index');
     }
 
+    public function editBook($id)
+    {
+        $book = Book::where('id', $id)->first();
+        if(!empty($book))
+        {
+            return view('livros.editBook', compact('book'));
+        }else{
+            return view('livros.perfil');
+        }
+    }
+
+    public function updateBook(Request $request, $id)
+    {
+        $request->validate([
+            'tittle'=>'required|min:5|',
+            'descricao'=>'required',
+            'obra'=>'required',
+            'categoria1'=>'required',
+            'categoria2',
+            'categoria3',
+        ]);
+        $user = auth()->user();
+        $book = $user->books;
+        $nova = [
+            'tittle'=> $request->tittle,
+            'descricao'=> $request->descricao,
+            'obra' => $request->obra,
+            'categoria1' => $request->categoria1,
+            'categoria2' => $request->categoria2,
+            'categoria3' => $request->categoria3,
+        ];
+        Book::where('id', $id)->update($nova);
+        return redirect()->route('livros.perfil');
+    }
+
+    public function destroyBook($id)
+    {
+        Book::where('id', $id)->delete();
+    }
 
 }

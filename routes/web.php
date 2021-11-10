@@ -39,7 +39,10 @@ Route::post('/newpost',[PerfilController::class, 'obra'])->name('livros.post');
 
 Route::get('/{id}/profile',[PerfilController::class, 'edit'])->where('id', '[0-9]+')->name('livros.edit');
 Route::put('/{id}/newprofile', [PerfilController::class,'update'])->where('id', '[0-9]+')->name('livros.update');
-
 Route::delete('/{id}', [PerfilController::class, 'destroy'])->where('id', '[0-9]+')->name('livros.destroy');
+
+Route::get('/editbook/{id}',[PerfilController::class, 'editBook'])->where('id', '[0-9]+')->name('livros.editBook');
+Route::put('/newbook/{id}', [PerfilController::class, 'updateBook'])->where('id', '[0-9]+')->name('livros.updateBook');
+Route::delete('/delete/{id}', [PerfilController::class, 'destroyBook'])->where('id', '[0-9]+')->name('livros.destroyBook');
 
 Route::fallback([IndexController::class, 'index'])->name('livros.index');
