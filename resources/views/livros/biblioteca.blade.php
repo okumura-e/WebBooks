@@ -23,12 +23,13 @@
             </header>
         </div>
 
-        <div id="pag">
+        <div id="pesquisa">
             <input class="button" type="button" value="📚 Filtro">
             <input id="search" type="search" placeholder="🔍 Pesquisar">
-            
+        </div>
+        
+        <div id="pag">
             @foreach ($books as $book)
-            <div id="book">
                 <div class="card">
                     <h2 class="title">{{$book->tittle}}</h2>
                     <picture class="image">
@@ -39,7 +40,6 @@
                     </div>
                     <a href="/leitura/{{$book->id}}"><button class="cardButton">Começar</button></a>
                 </div>  
-            </div>
             @endforeach
 
         </div>

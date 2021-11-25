@@ -36,12 +36,11 @@
 
                 <div id="list">
                     <h3 id="pulo">Minhas obras</h3>
-                    <img src="img/capa_livro.png" alt="">
                 </div>
 
                 @foreach ($livros as $livro)
-                    <a href="/editbook/{{$livro->id}}"><p>editar</a>{{$livro->tittle}}</p>
-                    <img src="/img/events/{{$livro->image}}" alt="">
+                    <a href="/editbook/{{$livro->id}}"><p>{{$livro->tittle}}</a></p>
+                    <img id="list" src="/img/events/{{$livro->image}}" alt="">
                 @endforeach
             
             </div>

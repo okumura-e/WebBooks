@@ -129,14 +129,14 @@ img{
     border-radius: 10%
 }
 .titulo{
-    margin-left: 50%;
+    text-align:center;
 }
 .descricao{
-    margin-left: 50%;
+    text-align:center;
     margin-top: 20px;
     margin-bottom: 50px;
 }
 .obra{
-    margin-left: 50%;
+    text-align:center;
     margin-bottom: 30px;
 }
